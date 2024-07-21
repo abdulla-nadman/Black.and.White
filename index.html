@@ -1,0 +1,32 @@
+
+
+
+
+.header {
+    display: flex;
+    justify-content: center; /* Zentriert den Text horizontal im Header */
+    text-align: center; /* Textzentrierung */
+}
+
+.header h1 {
+    font-size: 4rem; /* Grî·e der Schriftart anpassen */
+    font-weight: bold; /* Schriftart fett machen */
+    background: linear-gradient(to right, black 50%, white 50%);
+    -webkit-background-clip: text; /* FÅr WebKit-Browser */
+    background-clip: text; /* FÅr andere Browser */
+    color: transparent; /* Textfarbe transparent machen */
+    margin: 0; /* Entfernt den Standard-Margin der h1 */
+}
+
+.header span {
+    display: block; /* Macht den span zu einem Blockelement fÅr besseren Abstand */
+    margin-top: 10px; /* Abstand zwischen den Zeilen */
+    font-size: 1.5rem; /* Schriftgrî·e fÅr den span anpassen */
+    color: inherit; /* Erbt die Textfarbe vom h1 */
+}
+
+
+
+<div class="header">
+<h1>Willkommen in unserem Online-Shop<br><span>Black and White</span></h1>
+</div>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warenkorb</title>
+    <link rel="stylesheet" href="app.component.Warenkorb.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            background-color: #fff;
+            margin-bottom: 10px;
+            border-radius: 4px;
+        }
+        .item-details {
+            display: flex;
+            align-items: center;
+        }
+        .item-name {
+            margin-right: 20px;
+            font-weight: bold;
+        }
+        .item-quantity {
+            display: flex;
+            align-items: center;
+        }
+        .item-quantity input {
+            width: 50px;
+            text-align: center;
+            padding: 5px;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .item-actions button {
+            background-color: #ff0000;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .item-actions button:hover {
+            background-color: #cc0000;
+        }
+        .total {
+            font-weight: bold;
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+        .checkout-button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 1.1em;
+            margin-top: 20px;
+        }
+        .checkout-button:hover {
+            background-color: #45a049;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-logo">
+            <img src="Mein Logo.png" alt="Logo" class="logo">
+            <span class="subtitle">Black and White</span>
+        </div>
+    </header>
+
+    <nav>
+        <a href="app.component.html">Startseite</a>
+        <a href="app.component.Kategorie.html">Kategorie</a>
+        <a href="app.component.ueber uns.html">šber uns</a>
+        <a href="app.component.Kontakt.html">Kontakt</a>
+    </nav>
+
+    <div class="container">
+        <h1>Warenkorb</h1>
+        <div id="cart">
+            <!-- Warenkorb-Elemente werden hier hinzugefgt -->
+        </div>
+        <div class="total">
+            Gesamtbetrag: <span id="total-price">0</span> ?
+        </div>
+        <button class="checkout-button" onclick="checkout()">Zur Kasse</button>
+    </div>
+
+    <footer>
+        &copy; 2024 Black and White | <a href="#">Datenschutz</a> | <a href="#">AGB</a>
+    </footer>
+
+    <script src="app.component.Warenkorb.js"></script>
+</body>
+</html>
