@@ -31,7 +31,7 @@ function App() {
     <div>
       <nav className="nav-primary">
         <Link to="/warenkorb">
-          <i className="fas fa-shopping-cart"></i> Warenkorb
+          <i className="fas fa-shopping-cart"></i> 
         </Link>
       </nav>
 
@@ -59,7 +59,12 @@ function App() {
       
 
     </div>
+    
   );
 }
 
+
+
 export default App;
+
+
