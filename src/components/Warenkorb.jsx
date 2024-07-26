@@ -17,7 +17,8 @@ const Warenkorb = () => {
         <h1>Your bag ({cartItems.length} items)</h1>
         <div className="shipping-info">
           <i className="fas fa-shipping-fast"></i>
-          <span>Parcel shipped by Zalando</span>
+          <span>Parcel shipped by</span>
+          <span style={{fontWeight:'bold'}}>B&W</span>
           <span>Tomorrow, 27/07 - Tue, 30/07</span>
         </div>
         <div className="cart-items">
