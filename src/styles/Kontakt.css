@@ -1,4 +1,4 @@
-/* Kontakt page specific styles */
+/* Kontakt.css */
 form {
     background-color: #fff;
     border: 1px solid #ddd;
@@ -34,3 +34,6 @@ form {
     background-color: #555;
   }
   
+  textarea {
+    resize: none;
+}

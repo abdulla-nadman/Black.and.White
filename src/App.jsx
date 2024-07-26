@@ -1,50 +1,53 @@
-import React, { useState } from 'react';
-import { Route, Routes, Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Route, Routes, Link , useLocation } from 'react-router-dom';
 import Startseite from './components/Startseite';
 import Kategorie from './components/Kategorie';
 import UeberUns from './components/UeberUns';
 import Kontakt from './components/Kontakt';
 import Warenkorb from './components/Warenkorb';
 import NotFound from './components/NotFound';
+import WarenkorbButton from './components/WarenkorbButton'; // Import WarenkorbButton component
+import SearchBar from './components/SearchBar'; // Import SearchBar component
 import './styles/App.css';
-// import 'https://fonts.googleapis.com/icon?family=Material+Icons';
-// import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css';
+
 
 function App() {
-  const [searchInput, setSearchInput] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('alle');
-  const [filteredProducts, setFilteredProducts] = useState([
-    // Sample products, replace with actual product data
-    { id: 1, name: 'Produkt 1', category: 'Kleidung', price: '19,99', image: 'produkt1.jpg' },
-    { id: 2, name: 'Produkt 2', category: 'Schuhe', price: '24,99', image: 'produkt2.jpg' },
-  ]);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
 
-  const search = () => {
-    // Implement search functionality here
-  };
+    window.addEventListener('scroll', handleScroll);
 
-  const addToCart = (productId) => {
-    // Implement add to cart functionality here
-  };
-
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+  const isStartseite = location.pathname === '/';
   return (
     <div>
-      <nav className="nav-primary">
-        <Link to="/warenkorb">
-          <i className="fas fa-shopping-cart"></i> 
-        </Link>
-      </nav>
-
-      <header className="header-logo">
-        <img src={`${process.env.PUBLIC_URL}/Mein Logo.png`} alt="Logo" className="logo" />
-        <span className="subtitle">Black and White</span>
+      <header className={`header-logo ${isScrolled ? 'scrolled' : ''}`}>
+        <div className="logo-container">
+          <img src={`${process.env.PUBLIC_URL}/Mein Logo.png`} alt="Logo" className="logo" />
+          <span className="subtitle">Black and White</span>
+        </div>
       </header>
 
-      <nav>
+      <nav className={`navigation ${isScrolled ? 'scrolled' : ''}`}>
         <Link to="/">Startseite</Link>
         <Link to="/kategorie">Kategorie</Link>
         <Link to="/ueber-uns">Über uns</Link>
         <Link to="/kontakt">Kontakt</Link>
+        {isStartseite && <SearchBar isScrolled={isScrolled} />}
+        <Link to="/warenkorb" className="warenkorb-button-link">
+          <WarenkorbButton isScrolled={isScrolled} />
+        </Link>
       </nav>
 
       <Routes>
@@ -55,9 +58,6 @@ function App() {
         <Route path="/warenkorb" element={<Warenkorb />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-
-      
-
     </div>
     
   );

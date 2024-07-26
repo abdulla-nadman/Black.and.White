@@ -1,0 +1,103 @@
+/* src/styles/SearchBar.css */
+.search-bar {
+    display: flex;
+    align-items: center;
+    height: 10px;
+    background-color: #000;
+    border-radius: 5px;
+    overflow: hidden;
+    color: rgb(255, 255, 255);
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .search-bar.scrolled {
+    background-color: #fff;
+  }
+  
+  .search-input {
+    border: none;
+    padding: 10px;
+    outline: none;
+    font-size: 1em;
+    flex-grow: 1;
+    color: white;
+    background-color: transparent;
+    transition: color 0.3s;
+  }
+  
+  .search-input.scrolled {
+    color: black;
+  }
+  
+  .search-button,
+  .filter-button {
+    background-color: #000;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .search-button:hover,
+  .filter-button:hover {
+    background-color: #fff;
+    color: black;
+  }
+  
+  .search-button.scrolled,
+  .filter-button.scrolled {
+    background-color: #fff;
+    color: black;
+  }
+  
+  .search-button.scrolled:hover,
+  .filter-button.scrolled:hover {
+    background-color: #000;
+    color: white;
+  }
+  
+  .search-button {
+    border-radius: 0 5px 5px 0;
+  }
+  
+  .filter-button {
+    border-radius: 5px;
+    margin-left: 5px;
+  }
+  
+  .search-icon,
+  .filter-icon {
+    color: white;
+    transition: color 0.3s;
+  }
+  
+  .search-bar.scrolled .search-icon,
+  .search-bar.scrolled .filter-icon {
+    color: black;
+  }
+  
+  .search-button:hover .search-icon,
+  .filter-button:hover .filter-icon {
+    color: black;
+  }
+  
+  .search-button.scrolled:hover .search-icon,
+  .filter-button.scrolled:hover .filter-icon {
+    color: white;
+  }
+  
+  .search-icon:hover ,
+  .filter-icon:hover  {
+    color: black;
+  }
+  
+  
+  .search-icon.scrolled:hover ,
+  .filter-icon.scrolled:hover  {
+    color: white;
+  }
+  

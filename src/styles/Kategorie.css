@@ -1,4 +1,4 @@
-/* Stile f�r den Header */
+/* Kategorie.css */
 .header-logo {
     display: flex;
     background-color: #000000;
@@ -15,7 +15,7 @@
     display: flex;
     align-items: left;
     justify-content: left;
-    position: relative;
+    position: relative; 
 }
 .header-logo .logo {
     margin-right: 50px; /* Abstand zwischen Logo und Text, nach Bedarf anpassen */

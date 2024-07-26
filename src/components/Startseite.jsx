@@ -3,6 +3,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import '../styles/Startseite.css'; // Import CSS file
 import { CartContext } from '../CartContext';
+import ProductCard from './ProductCard'; 
 
 const Startseite = () => {
   const { addToCart } = useContext(CartContext);
@@ -10,8 +11,10 @@ const Startseite = () => {
   const [selectedCategory, setSelectedCategory] = useState('alle');
   const [filteredProducts, setFilteredProducts] = useState([
     // Sample products, replace with actual product data
-    { id: 1, name: 'Produkt 1', category: 'Kleidung', price: '19.99', image: 'produkt1.jpg' },
-    { id: 2, name: 'Produkt 2', category: 'Schuhe', price: '24.99', image: 'produkt2.jpg' },
+    { id: 1, name: 'Produkt 1', category: 'Kleidung', color: 'Red',size:'M', price: '19.99', image: 'produkt1.jpg' },
+    { id: 2, name: 'Produkt 2', category: 'Schuhe', color: 'Blue',size:'M', price: '24.99', image: 'produkt2.jpg' },
+    { id: 3, name: 'Produkt 3', category: 'Schuhe', color: 'Green',size:'M', price: '34.99', image: 'produkt3.jpg' },
+    { id: 4, name: 'Produkt 4', category: 'Schuhe', color: 'Green',size:'M', price: '44.99', image: 'produkt4.jpg' },
   ]);
 
   useEffect(() => {
@@ -30,38 +33,13 @@ const Startseite = () => {
 
   return (
     <div>
-      <div className="search-container">
-        <input
-          type="text"
-          value={searchInput}
-          onChange={(e) => setSearchInput(e.target.value)}
-          placeholder="Suche..."
-        />
-        <select
-          value={selectedCategory}
-          onChange={(e) => setSelectedCategory(e.target.value)}
-        >
-          <option value="alle">Alle Kategorien</option>
-          <option value="kleidung">Kleidung</option>
-          <option value="schuhe">Schuhe</option>
-          <option value="accessoires">Accessoires</option>
-        </select>
-        <button onClick={search}>Suchen</button>
-      </div>
+      
 
       <div className="container">
         {filteredProducts.map(product => (
-          <div key={product.id} className="product">
-            <img src={`${process.env.PUBLIC_URL}/${product.image}`} alt={product.name} />
-            <h2>{product.name}</h2>
-            <p>Kategorie: {product.category}</p>
-            <p>Beschreibung des Produkts...</p>
-            <p>Preis: {product.price} €</p>
-            <button onClick={() => addToCart(product)}>Zum Warenkorb hinzufügen</button>
-          </div>
+          <ProductCard key={product.id} product={product} addToCart={addToCart} />
         ))}
       </div>
-
       <footer>
         &copy; 2024 Black and White | <a href="#">Datenschutz</a> | <a href="#">AGB</a>
       </footer>

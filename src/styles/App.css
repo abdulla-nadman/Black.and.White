@@ -1,233 +1,157 @@
-/* Stile f�r den Header */
+/* src/styles/App.css */
 .header-logo {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    padding: 20px 40px;
     background-color: #000000;
+    color: white;
+    transition: padding 0.3s, background-color 0.3s, height 0.3s;
+    position: relative;
+    z-index: 10;
+  }
+  
+  .header-logo.scrolled {
     padding: 10px 20px;
-}
-
-/* Stile f�r das Logo */
-.header-logo .logo {
-    height: 100px; /* H�he des Logos, passt automatisch die Breite an */
-    margin-right: 20px; /* Abstand zwischen Logo und Navigation */
-}
-
-
-
-
-
-.header-logo {
+    background-color: #fff;
+    color: #000;
+  }
+  
+  .header-logo.scrolled .subtitle {
+    color: #000;
+  }
+  
+  .header-logo.scrolled .logo {
+    height: 30px;
+  }
+  
+  .logo-container {
     display: flex;
-    align-items: left;
-    justify-content: left;
-    position: relative;
-}
-
-.header-logo .logo {
-    margin-right: 50px; /* Abstand zwischen Logo und Text, nach Bedarf anpassen */
-}
-
-.header-logo .subtitle {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-
-    
-.header-logo .logo {
-    width: 200px; /* Breite des Logos anpassen */
-    height: 200px; /* H�he des Logos anpassen */
-    margin-right: 10px; /* Abstand zwischen Logo und Text, nach Bedarf anpassen */
-}
-
-
-
-
-
-/* Stile f�r das Header-Navigationsmen� */
-header {
-    background-color: #333;
-    padding: 20px 0;
-    color: #611d1d;
-}
-
-/* Allgemeine Stile f�r die Navigation */
-nav {
-    flex-grow: 1;
-}
-
-nav a {
-    color: #000000; /* Textfarbe der Links */
-    text-decoration: none; /* Entfernt die Unterstreichung */
-    padding: 10px 20px; /* Innenabstand der Links */
-    display: inline-block; /* Macht den Linkbereich inline-block */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Weicher �bergang f�r Hover-Effekte */
-}
-
-nav a:hover {
-    background-color: #000000; /* Hintergrundfarbe beim Hover */
-    color: #ffd700; /* Textfarbe beim Hover */
-    border-radius: 100px; /* Abrundung der Ecken */
-}
-
-/* Beispiel f�r einen Warenkorb-Z�hler */
-.cart-count {
-    position: absolute;
-    top: -5px;
-    right: -10px;
-    background-color: rgb(255, 255, 255);
-    color: rgb(255, 248, 248);
-    border-radius: 50%;
-    padding: 2px 6px;
-    font-size: 12px;
-}
-
-
-
-
-
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #ffffff; /* Hintergrundfarbe f�r den gesamten Body */
-    position: relative; /* Erm�glicht absolute Positionierung von Elementen, wenn n�tig */
-}
-
-
-header {
-    background-color: #09090a;
-    color: #ffffff;
-    padding: 100px 0;
-    text-align: center;
-    position: relative;
-    top: 0;
-    z-index: 1000; /* Adjust if necessary */
-    font-size: xx-large
-}
-
-
-.background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    /* background-image: url('/Hintergrund2.jpeg');  */
-    background-size: cover;
-    background-position: center;
-    z-index: -1; /* Hintergrund hinter den anderen Elementen */
-}
-
-
-
-.nav-primary {
+    align-items: center;
+    transition: all 0.3s;
+  }
+  
+  .logo {
+    height: 50px;
+    transition: height 0.3s;
+  }
+  
+  .subtitle {
+    font-size: 1.2em;
+    margin-left: 10px;
+    transition: color 0.3s;
+  }
+  
+  .navigation {
     display: flex;
-    justify-content: right; /* Rechtsb�ndig */
-    padding: 0 20px;
-}
-
-
-nav {
-    background-color: #000000;
-    text-align: center;
+    justify-content: center;
     padding: 10px 0;
-    position: relative;
-    top: 15x;
-    z-index: 1000;
-}
-
-nav a {
-    color: #ffffff;
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    transition: background-color 0.3s, color 0.3s, padding 0.3s;
+  }
+  
+  .navigation a {
+    margin: 0 15px;
+    color: white;
     text-decoration: none;
-    padding: 10px 20px;
-    margin: 0 5px;
-    border-radius: 5px;
-    transition: 0.3s ease;
-}
-
-
-    /* Hover-Effekte */
-nav a:hover {
-    background-color: #4b4b4b; /* Hintergrundfarbe beim Hover */
-    color: #ffffff; /* Textfarbe beim Hover */
-    border-radius: 5px; /* Abrundung der Ecken */
-}
-
-.search-container {
+    transition: color 0.3s;
+  }
+  
+  .navigation a:hover {
+    color: #ffcc00; /* Default hover color */
+    background-color: transparent; /* Ensure background color stays transparent */
+  }
+  
+  .navigation.scrolled {
     background-color: #fff;
-    padding: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    z-index: 1000;
+    color: #000;
+    padding: 5px 0;
+  }
+  
+  .navigation.scrolled a {
+    color: #000;
+  }
+  
+  .navigation.scrolled a:hover {
+    color: #ff6600; /* Hover color when scrolled */
+    background-color: transparent; /* Ensure background color stays transparent */
+  }
+  
+  .warenkorb-button-link {
+    text-decoration: none;
+    padding-right: 2%;
     position: relative;
-    top: 1px;
-}
-
-.search-container input[type="text"], .search-container select {
-    padding: 8px;
-    margin-right: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.search-container button {
-    padding: 8px 15px;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
+    left: 20%;
+    top: -10px;
+  }
+  
+  .warenkorb-button-link .custom-button {
+    color: white;
     cursor: pointer;
-}
-
-.search-container button:hover {
-    background-color: #555;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 0 20px;
-    flex: 1;
-}
-
-.product {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.product img {
-    max-width: 100%;
-    height: auto;
-}
-
-.product h2 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-}
-
-.product p {
-    color: #7c4444;
-}
-
-/* Stile f�r den Footer */
-footer {
-    background-color: #333; /* Hintergrundfarbe des Footers */
-    color: #fff; /* Textfarbe im Footer */
-    text-align: center; /* Zentriert den Text im Footer */
-    padding: 10px 0; /* Innenabstand f�r den Footer */
-}
-
-footer a {
-    color: #fff; /* Farbe der Links im Footer */
-    text-decoration: none; /* Entfernt die Unterstreichung der Links */
-    margin: 0 10px; /* Abstand zwischen den Links */
-}
-
-footer a:hover {
-    text-decoration: underline; /* Unterstreichung bei Hover-Effekt */
-}
+    font-size: 1.1em;
+  }
+  
+  .warenkorb-button-link .custom-button:hover {
+    background-color: #ffffff;
+  }
+  
+  .cart-icon-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .cart-badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: red;
+    color: white;
+    border-radius: 80%;
+    padding: -2px 6px ;
+    font-size: 12px;
+    font-weight: bold;
+  }
+  
+  .custom-cart-icon {
+    color: white;
+    font-size: 24px;
+    margin-right: 10px;
+  }
+  
+  .custom-button {
+    background-color: #000000; /* Initial background color */
+    color: whitesmoke; /* Initial text color */
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1em; /* Adjust font size as needed */
+    font-weight: bold;
+    overflow: hidden;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .custom-button-content {
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s;
+  }
+  
+  .custom-button:hover {
+    background-color: white; 
+    color: black; 
+  }
+  
+  .custom-button:hover .custom-cart-icon {
+    color: black; 
+  }
+  
+  .custom-button:hover .custom-button-content {
+    transform: translateX(10px); /* Move content to the right on hover */
+  }
+  
