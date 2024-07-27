@@ -9,6 +9,13 @@ import NotFound from './components/NotFound';
 import WarenkorbButton from './components/WarenkorbButton'; // Import WarenkorbButton component
 import SearchBar from './components/SearchBar'; // Import SearchBar component
 import './styles/App.css';
+import './components/Schalterknopf';
+
+
+
+
+
+
 
 
 function App() {
@@ -37,6 +44,11 @@ function App() {
           <img src={`${process.env.PUBLIC_URL}/Mein Logo.png`} alt="Logo" className="logo" />
           <span className="subtitle">Black and White</span>
         </div>
+        
+       
+
+       
+
       </header>
 
       <nav className={`navigation ${isScrolled ? 'scrolled' : ''}`}>
@@ -62,6 +74,7 @@ function App() {
     
   );
 }
+
 
 
 

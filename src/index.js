@@ -4,6 +4,8 @@ import App from './App';
 import { CartProvider } from './CartContext';
 import { BrowserRouter } from 'react-router-dom';
 
+
+
 const rootElement = document.getElementById('root');
 
 if (rootElement) {
@@ -21,3 +23,4 @@ if (rootElement) {
 } else {
   console.error("Root element not found.");
 }
+
