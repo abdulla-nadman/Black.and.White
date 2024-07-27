@@ -45,39 +45,47 @@
   .navigation {
     display: flex;
     justify-content: center;
-    padding: 10px 0;
+    padding: 0px 0; /* Reduced padding */
     position: sticky;
     top: 0;
     z-index: 5;
     transition: background-color 0.3s, color 0.3s, padding 0.3s;
-  }
-  
-  .navigation a {
+    background-color: #000000;
+}
+
+
+.navigation a {
     margin: 0 15px;
     color: white;
     text-decoration: none;
     transition: color 0.3s;
-  }
-  
-  .navigation a:hover {
-    color: #ffcc00; /* Default hover color */
-    background-color: transparent; /* Ensure background color stays transparent */
-  }
-  
-  .navigation.scrolled {
+}
+
+.navigation a {
+    color: #ffffff; /* Text color white */
+    text-decoration: none; /* Remove underline */
+}
+
+.navigation a:hover {
+    color: #000000; /* Gray hover color */
+    background-color: rgb(134, 134, 132); /* Ensure background color stays transparent */
+}
+
+.navigation.scrolled {
     background-color: #fff;
     color: #000;
-    padding: 5px 0;
-  }
-  
-  .navigation.scrolled a {
+    padding: 3px 0; /* Reduced padding */
+}
+
+.navigation.scrolled a {
     color: #000;
-  }
-  
-  .navigation.scrolled a:hover {
+}
+
+.navigation.scrolled a:hover {
     color: #ff6600; /* Hover color when scrolled */
     background-color: transparent; /* Ensure background color stays transparent */
-  }
+}
+
   
   .warenkorb-button-link {
     text-decoration: none;
