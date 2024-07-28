@@ -5,12 +5,23 @@ import '../styles/Startseite.css'; // Import CSS file
 import { CartContext } from '../CartContext';
 import ProductCard from './ProductCard'; 
 
+
+
+
+
+
+
+
+
+
+
 const Startseite = () => {
   const { addToCart } = useContext(CartContext);
   const [searchInput, setSearchInput] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('alle');
   const [filteredProducts, setFilteredProducts] = useState([
     // Sample products, replace with actual product data
+    
     { id: 1, name: 'Produkt 1', category: 'Kleidung', color: 'Red',size:'M', price: '19.99', image: 'produkt1.jpg' },
     { id: 2, name: 'Produkt 2', category: 'Schuhe', color: 'Blue',size:'M', price: '24.99', image: 'produkt2.jpg' },
     { id: 3, name: 'Produkt 3', category: 'Schuhe', color: 'Green',size:'M', price: '34.99', image: 'produkt3.jpg' },

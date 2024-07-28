@@ -51,6 +51,8 @@ function App() {
 
       </header>
 
+      
+
       <nav className={`navigation ${isScrolled ? 'scrolled' : ''}`}>
         <Link to="/">Startseite</Link>
         <Link to="/kategorie">Kategorie</Link>
@@ -62,6 +64,21 @@ function App() {
         </Link>
       </nav>
 
+
+      <section className="product-showcase">
+          <div className="carousel">
+            <div className="product" style={{ transform: 'rotateY(0deg) translateZ(400px)' }}>Product 1</div>
+            <div className="product" style={{ transform: 'rotateY(45deg) translateZ(400px)' }}>Product 2</div>
+            <div className="product" style={{ transform: 'rotateY(90deg) translateZ(400px)' }}>Product 3</div>
+            <div className="product" style={{ transform: 'rotateY(135deg) translateZ(400px)' }}>Product 4</div>
+            <div className="product" style={{ transform: 'rotateY(180deg) translateZ(400px)' }}>Product 5</div>
+            <div className="product" style={{ transform: 'rotateY(225deg) translateZ(400px)' }}>Product 6</div>
+            <div className="product" style={{ transform: 'rotateY(270deg) translateZ(400px)' }}>Product 7</div>
+            <div className="product" style={{ transform: 'rotateY(315deg) translateZ(400px)' }}>Product 8</div>
+          </div>
+        </section>
+
+        
       <Routes>
         <Route path="/" element={<Startseite />} />
         <Route path="/kategorie" element={<Kategorie />} />
